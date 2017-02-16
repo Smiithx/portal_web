@@ -1,26 +1,28 @@
+<?php 
+$dir = "http://".$_SERVER['HTTP_HOST'].":".$_SERVER['SERVER_PORT']."/portal_web/";
+$archivoActual = $_SERVER["SCRIPT_NAME"];
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="utf-8">
         <title>Portal</title>
         <script
-                src="https://code.jquery.com/jquery-3.1.1.min.js"
-                integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-                crossorigin="anonymous"></script>
+        src="<?php echo $dir."js/jquery-3.1.1.js"?>"></script>
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="<?php echo $dir."css/bootstrap.css"?>"/>
 
         <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/proyectos/portal_web/css/estilo.css">
+        <script src="<?php echo $dir."js/bootstrap.js"?>"></script>
+        <link rel="stylesheet" href="<?php echo $dir."css/estilo.css"?>">
     </head>
-    <body class="<?php $archivoActual = $_SERVER["SCRIPT_NAME"]; if($archivoActual == "/proyectos/portal_web/index.php"){echo 'bg';} ?>"> 
-        <?php         
-        if($archivoActual != "/proyectos/portal_web/index.php" && 
-           $archivoActual != "/proyectos/portal_web/registrarse.php" && 
-           $archivoActual != "/proyectos/portal_web/logout.php" && 
-           $archivoActual != "/proyectos/portal_web/login.php" && 
-           $archivoActual != "/proyectos/portal_web/admin/actualizar.php"):
+    <body class="<?php if($archivoActual == "/portal_web/index.php" Or $archivoActual == "/portal_web/registrarse.php"){echo 'bg';} ?>"> 
+        <?php 
+        if($archivoActual != "/portal_web/index.php" && 
+           $archivoActual != "/portal_web/registrarse.php" && 
+           $archivoActual != "/portal_web/logout.php" && 
+           $archivoActual != "/portal_web/login.php" && 
+           $archivoActual != "/portal_web/admin/actualizar.php"):
         ?>
         <header>
             <a href="index.php" class="logo">
