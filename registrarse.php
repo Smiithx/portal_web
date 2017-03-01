@@ -1,7 +1,6 @@
 <?php 
-require "inc/cabecera.php"; 
+require_once "inc/cabecera.php"; 
 ?>
-<script src="js/registrar.js"></script>
 <div class="container-fluid container-principal">
     <div class="row">
         <div class="col-md-12 text-center">
@@ -18,7 +17,7 @@ require "inc/cabecera.php";
                 </div>
                 <a href='#' class='close err'><i class='glyphicon glyphicon-remove'></i></a>
             </div>
-            <form id="form-registro" action="" enctype="multipart/form-data" method="POST" role="form">
+            <form id="form-registro" enctype="multipart/form-data" method="POST" role="form">
                 <legend>Registrate</legend>
 
                 <div class="form-group">                            
@@ -59,7 +58,7 @@ require "inc/cabecera.php";
                 </div>
                 <div class="form-group">                            
                     <label for="">Elija su foto de perfil</label>
-                    <input name="foto" type="file" class="form-control" id=""/>
+                    <input name="foto" type="file" class="form-control" id="foto"/>
                 </div>
                 <button id="registrar" type="button" class="btn btn-primary">Registrarse</button>
                 <a href="index.php" class="pull-right">Login</a>
@@ -67,4 +66,5 @@ require "inc/cabecera.php";
         </div>
     </div>  
 </div>
+<script src="js/registrar.js"></script>
 <?php require "inc/footer.php"; ?>

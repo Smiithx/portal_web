@@ -1,5 +1,5 @@
 <?php 
-$dir = "http://".$_SERVER['HTTP_HOST'].":".$_SERVER['SERVER_PORT']."/portal_web/";
+$dir = "http://".$_SERVER['HTTP_HOST'].":".$_SERVER['SERVER_PORT']."/proyectos/portal_web/";
 $archivoActual = $_SERVER["SCRIPT_NAME"];
 ?>
 <!DOCTYPE html>
@@ -11,18 +11,19 @@ $archivoActual = $_SERVER["SCRIPT_NAME"];
         src="<?php echo $dir."js/jquery-3.1.1.js"?>"></script>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="<?php echo $dir."css/bootstrap.css"?>"/>
-
+        <link rel="stylesheet" href="<?php echo $dir."css/tether.css"?>"/>
         <!-- Latest compiled and minified JavaScript -->
+        <script src="<?php echo $dir."js/tether.js"?>"></script>
         <script src="<?php echo $dir."js/bootstrap.js"?>"></script>
         <link rel="stylesheet" href="<?php echo $dir."css/estilo.css"?>">
     </head>
-    <body class="<?php if($archivoActual == "/portal_web/index.php" Or $archivoActual == "/portal_web/registrarse.php"){echo 'bg';} ?>"> 
+    <body class="<?php if($archivoActual == "/proyectos/portal_web/index.php" Or $archivoActual == "/proyectos/portal_web/registrarse.php"){echo 'bg';} ?>"> 
         <?php 
-        if($archivoActual != "/portal_web/index.php" && 
-           $archivoActual != "/portal_web/registrarse.php" && 
-           $archivoActual != "/portal_web/logout.php" && 
-           $archivoActual != "/portal_web/login.php" && 
-           $archivoActual != "/portal_web/admin/actualizar.php"):
+        if($archivoActual != "/proyectos/portal_web/index.php" && 
+           $archivoActual != "/proyectos/portal_web/registrarse.php" && 
+           $archivoActual != "/proyectos/portal_web/logout.php" && 
+           $archivoActual != "/proyectos/portal_web/login.php" && 
+           $archivoActual != "/proyectos/portal_web/admin/actualizar.php"):
         ?>
         <header>
             <a href="index.php" class="logo">
