@@ -22,32 +22,22 @@ $(function(){
             type: "POST",
             url: url,
             data: datos,
-            dataType: "html",
+            dataType: "json",
             cache: false,
             contentType: false,
             processData: false,
             success: function(respuesta){
                 console.log(respuesta);
-                respuesta = JSON.parse(respuesta);
-                console.log("test: "+ respuesta.test);
-                console.log("error: "+ respuesta.error);
-                /*if(respuesta.error){
+                if(respuesta.success){
+                    if(respuesta.registroPublico){
+                        var cuerpo = "<h2>Saludos "+ respuesta.nombre +"</h2><img class='img-responsive col-centrar' src='"+ respuesta.rutaSubida +"' alt='Imagen de perfil'><p>Te has registrado correctamente, por favor dale click al boton de abajo para ir a la pagina de inicio.</p><a href='index.php' class='btn btn-primary'>Login</a>";
+                        $(".container-principal").html(cuerpo);
+                    }
+                }else{
                     alerta.css({display: 'block'});
                     alerta_contenido.html(respuesta.error);
                     console.log(respuesta.error);
                 }
-                if(respuesta.success){
-                    if(respuesta.registroPublico){
-                        var cuerpo = "<h2>Saludos "+ respuesta.nombre +"</h2><img class='img-responsive col-centrar' src='"+ respuesta.rutaSubida +"' alt='Imagen de perfil'><p>Te has registrado correctamente, por favor dale click al botón de abajo para ir a la página de inicio.</p><a href='index.php' class='btn btn-primary'>Login</a>";
-                        $("#container-principal").html(cuerpo);
-                    }
-                }
-                if(respuesta.test){
-                    alerta.css({display: 'block'});
-                    alerta_contenido.html(respuesta.test);
-                    console.log(respuesta.test);
-                    alerta.focus();
-                }*/
             },
             error: function(e){
                 alerta.css({display: 'block'});

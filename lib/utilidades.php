@@ -1,7 +1,7 @@
 <?php
 
 function subirFoto($nombre, $nivel = 0){
-    global $dirSubida, $rutaSubida;    
+    global $dirSubida, $rutaSubida, $error;    
 
     $origen = "";
 
@@ -15,7 +15,6 @@ function subirFoto($nombre, $nivel = 0){
     $nombreTmp = $foto["tmp_name"];
     $rutaSubida = "{$dirSubida}profile.png";
     $extArchivo = preg_replace("/image\//","",$foto["type"]);
-    return '$extArchivo: '+$extArchivo;
     
     if($extArchivo == "jpeg" || $extArchivo == "png" || $extArchivo == "jpg"){
 
